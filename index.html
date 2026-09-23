@@ -1,42 +1,185 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mohammad Sat</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MOHAMMAD SAT</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial;background:linear-gradient(135deg,#6475df,#a76bd0);color:#292939}
-header{margin:14px;padding:25px 15px 30px;text-align:center;border-radius:28px;background:#ffffff1b;border:1px solid #ffffff55}
-.logo{width:120px;height:120px;border-radius:50%;padding:4px;background:#fff;margin:auto}.logo img{width:100%;height:100%;border-radius:50%;object-fit:cover}
-h1{color:#fff;margin:22px 0 6px;font-size:30px}.sub{color:#fff}.tools{max-width:1100px;margin:15px auto;padding:0 15px;display:flex;gap:10px;flex-wrap:wrap}
-input,select{border:0;border-radius:18px;padding:14px;font-size:15px;outline:0}#search{flex:1;min-width:220px}.cats{display:flex;gap:8px;overflow:auto;padding:0 15px 10px;max-width:1100px;margin:auto}
-.cat{border:0;border-radius:18px;padding:10px 16px;background:#ffffff33;color:#fff;white-space:nowrap}.cat.active{background:#fff;color:#5c62ce}
-.count{text-align:center;color:#fff;font-weight:bold}.grid{max-width:1100px;margin:auto;padding:10px 15px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.card{background:#fff;border-radius:24px;padding:12px;text-align:center;box-shadow:0 8px 22px #211a5525}.appimg{width:105px;height:105px;margin:5px auto 12px;border-radius:23px;background:#edf0f7;display:flex;align-items:center;justify-content:center;overflow:hidden}.appimg img{width:100%;height:100%;object-fit:cover}.ph{font-size:24px;font-weight:bold;color:#626bc8}.name{font-weight:bold;font-size:17px;min-height:45px;display:flex;align-items:center;justify-content:center}.download{display:block;background:linear-gradient(90deg,#5d68db,#7950bc);color:#fff;text-decoration:none;border-radius:20px;padding:11px;font-weight:bold;margin-top:8px}
-@media(max-width:700px){.grid{gap:9px;padding:8px 9px 25px}.card{padding:8px 5px;border-radius:19px}.appimg{width:85px;height:85px}.name{font-size:13px;min-height:40px}.download{font-size:12px;padding:9px 3px}header{margin:9px}.logo{width:105px;height:105px}h1{font-size:25px}}
-</style></head>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial;background:linear-gradient(135deg,#a8c0ff,#c2a8ff,#ffa8e8);color:#292939;min-height:100vh}
+header{margin:14px;padding:25px 15px 30px;text-align:center;border-radius:28px;background:#ffffffaa;border:1px solid #ffffffdd}
+.logo{width:120px;height:120px;border-radius:50%;padding:4px;background:#fff;margin:auto;box-shadow:0 4px 15px #0002}
+.logo img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+h1{color:#5c4db8;margin:22px 0 6px;font-size:30px;font-weight:bold}
+.sub{color:#7a6dc9;font-size:15px}
+.tools{max-width:1100px;margin:15px auto;padding:0 15px;display:flex;gap:10px;flex-wrap:wrap}
+input,select{border:0;border-radius:18px;padding:14px;font-size:15px;outline:0;box-shadow:0 3px 12px #0001}
+#search{flex:1;min-width:220px}
+.cats{display:flex;gap:8px;overflow:auto;padding:0 15px 10px;max-width:1100px;margin:auto}
+.cat{border:0;border-radius:18px;padding:10px 16px;background:#ffffffcc;color:#5c4db8;white-space:nowrap;cursor:pointer;font-weight:bold;box-shadow:0 3px 10px #0001}
+.cat.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
+.count{text-align:center;color:#5c4db8;font-weight:bold;margin:5px 0}
+.grid{max-width:1100px;margin:auto;padding:10px 15px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:#fff;border-radius:24px;padding:12px;text-align:center;box-shadow:0 8px 25px #4a3b8c22;position:relative;transition:transform .2s}
+.card:hover{transform:translateY(-3px)}
+.appimg{width:105px;height:105px;margin:5px auto 12px;border-radius:23px;background:#f0eeff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.appimg img{width:100%;height:100%;object-fit:cover}
+.ph{font-size:24px;font-weight:bold;color:#667eea}
+.name{font-weight:bold;font-size:17px;min-height:45px;display:flex;align-items:center;justify-content:center;color:#333}
+.download{display:block;background:linear-gradient(90deg,#667eea,#764ba2);color:#fff;text-decoration:none;border-radius:20px;padding:11px;font-weight:bold;margin-top:8px;box-shadow:0 4px 12px #667eea55}
+@media(max-width:700px){
+.grid{gap:9px;padding:8px 9px 25px;grid-template-columns:repeat(2,1fr)}
+.card{padding:8px 5px;border-radius:19px}
+.appimg{width:85px;height:85px}
+.name{font-size:13px;min-height:40px}
+.download{font-size:12px;padding:9px 3px}
+header{margin:9px}
+.logo{width:105px;height:105px}
+h1{font-size:25px}
+}
+</style>
+</head>
 <body>
-<header><div class="logo"><img id="logo" src="logo.png"></div><h1 id="title">Mohammad Sat</h1><div class="sub" id="subtitle">أكثر من 100 تطبيق جاهز للتحميل</div></header>
+<header>
+<div class="logo"><img id="logo" src="logo.png" onerror="this.style.display='none'"></div>
+<h1 id="title">MOHAMMAD SAT</h1>
+<div class="sub" id="subtitle">أحدث التطبيقات المجانية</div>
+</header>
 <div class="tools"><input id="search" placeholder="🔎 ابحث عن تطبيق..."></div>
-<div id="cats" class="cats"></div><div id="count" class="count"></div><main id="grid" class="grid"></main>
+<div id="cats" class="cats"></div>
+<div id="count" class="count"></div>
+<main id="grid" class="grid"></main>
 <script>
-const fallback={siteName:"Mohammad Sat",subtitle:"أكثر من 100 تطبيق جاهز للتحميل",apps:[]};
+const fallback={siteName:"MOHAMMAD SAT",subtitle:"أحدث التطبيقات المجانية",apps:[]};
 const saved=JSON.parse(localStorage.getItem("ms_data")||"null");
 const data=saved||fallback;
-if(!data.apps.length) data.apps=[{"id": 1, "name": "تطبيق 001", "category": "عام", "image": "", "download": "#"}, {"id": 2, "name": "تطبيق 002", "category": "عام", "image": "", "download": "#"}, {"id": 3, "name": "تطبيق 003", "category": "عام", "image": "", "download": "#"}, {"id": 4, "name": "تطبيق 004", "category": "عام", "image": "", "download": "#"}, {"id": 5, "name": "تطبيق 005", "category": "عام", "image": "", "download": "#"}, {"id": 6, "name": "تطبيق 006", "category": "عام", "image": "", "download": "#"}, {"id": 7, "name": "تطبيق 007", "category": "عام", "image": "", "download": "#"}, {"id": 8, "name": "تطبيق 008", "category": "عام", "image": "", "download": "#"}, {"id": 9, "name": "تطبيق 009", "category": "عام", "image": "", "download": "#"}, {"id": 10, "name": "تطبيق 010", "category": "عام", "image": "", "download": "#"}, {"id": 11, "name": "تطبيق 011", "category": "عام", "image": "", "download": "#"}, {"id": 12, "name": "تطبيق 012", "category": "عام", "image": "", "download": "#"}, {"id": 13, "name": "تطبيق 013", "category": "عام", "image": "", "download": "#"}, {"id": 14, "name": "تطبيق 014", "category": "عام", "image": "", "download": "#"}, {"id": 15, "name": "تطبيق 015", "category": "عام", "image": "", "download": "#"}, {"id": 16, "name": "تطبيق 016", "category": "عام", "image": "", "download": "#"}, {"id": 17, "name": "تطبيق 017", "category": "عام", "image": "", "download": "#"}, {"id": 18, "name": "تطبيق 018", "category": "عام", "image": "", "download": "#"}, {"id": 19, "name": "تطبيق 019", "category": "عام", "image": "", "download": "#"}, {"id": 20, "name": "تطبيق 020", "category": "عام", "image": "", "download": "#"}, {"id": 21, "name": "تطبيق 021", "category": "عام", "image": "", "download": "#"}, {"id": 22, "name": "تطبيق 022", "category": "عام", "image": "", "download": "#"}, {"id": 23, "name": "تطبيق 023", "category": "عام", "image": "", "download": "#"}, {"id": 24, "name": "تطبيق 024", "category": "عام", "image": "", "download": "#"}, {"id": 25, "name": "تطبيق 025", "category": "عام", "image": "", "download": "#"}, {"id": 26, "name": "تطبيق 026", "category": "عام", "image": "", "download": "#"}, {"id": 27, "name": "تطبيق 027", "category": "عام", "image": "", "download": "#"}, {"id": 28, "name": "تطبيق 028", "category": "عام", "image": "", "download": "#"}, {"id": 29, "name": "تطبيق 029", "category": "عام", "image": "", "download": "#"}, {"id": 30, "name": "تطبيق 030", "category": "عام", "image": "", "download": "#"}, {"id": 31, "name": "تطبيق 031", "category": "عام", "image": "", "download": "#"}, {"id": 32, "name": "تطبيق 032", "category": "عام", "image": "", "download": "#"}, {"id": 33, "name": "تطبيق 033", "category": "عام", "image": "", "download": "#"}, {"id": 34, "name": "تطبيق 034", "category": "عام", "image": "", "download": "#"}, {"id": 35, "name": "تطبيق 035", "category": "عام", "image": "", "download": "#"}, {"id": 36, "name": "تطبيق 036", "category": "عام", "image": "", "download": "#"}, {"id": 37, "name": "تطبيق 037", "category": "عام", "image": "", "download": "#"}, {"id": 38, "name": "تطبيق 038", "category": "عام", "image": "", "download": "#"}, {"id": 39, "name": "تطبيق 039", "category": "عام", "image": "", "download": "#"}, {"id": 40, "name": "تطبيق 040", "category": "عام", "image": "", "download": "#"}, {"id": 41, "name": "تطبيق 041", "category": "عام", "image": "", "download": "#"}, {"id": 42, "name": "تطبيق 042", "category": "عام", "image": "", "download": "#"}, {"id": 43, "name": "تطبيق 043", "category": "عام", "image": "", "download": "#"}, {"id": 44, "name": "تطبيق 044", "category": "عام", "image": "", "download": "#"}, {"id": 45, "name": "تطبيق 045", "category": "عام", "image": "", "download": "#"}, {"id": 46, "name": "تطبيق 046", "category": "عام", "image": "", "download": "#"}, {"id": 47, "name": "تطبيق 047", "category": "عام", "image": "", "download": "#"}, {"id": 48, "name": "تطبيق 048", "category": "عام", "image": "", "download": "#"}, {"id": 49, "name": "تطبيق 049", "category": "عام", "image": "", "download": "#"}, {"id": 50, "name": "تطبيق 050", "category": "عام", "image": "", "download": "#"}, {"id": 51, "name": "تطبيق 051", "category": "عام", "image": "", "download": "#"}, {"id": 52, "name": "تطبيق 052", "category": "عام", "image": "", "download": "#"}, {"id": 53, "name": "تطبيق 053", "category": "عام", "image": "", "download": "#"}, {"id": 54, "name": "تطبيق 054", "category": "عام", "image": "", "download": "#"}, {"id": 55, "name": "تطبيق 055", "category": "عام", "image": "", "download": "#"}, {"id": 56, "name": "تطبيق 056", "category": "عام", "image": "", "download": "#"}, {"id": 57, "name": "تطبيق 057", "category": "عام", "image": "", "download": "#"}, {"id": 58, "name": "تطبيق 058", "category": "عام", "image": "", "download": "#"}, {"id": 59, "name": "تطبيق 059", "category": "عام", "image": "", "download": "#"}, {"id": 60, "name": "تطبيق 060", "category": "عام", "image": "", "download": "#"}, {"id": 61, "name": "تطبيق 061", "category": "عام", "image": "", "download": "#"}, {"id": 62, "name": "تطبيق 062", "category": "عام", "image": "", "download": "#"}, {"id": 63, "name": "تطبيق 063", "category": "عام", "image": "", "download": "#"}, {"id": 64, "name": "تطبيق 064", "category": "عام", "image": "", "download": "#"}, {"id": 65, "name": "تطبيق 065", "category": "عام", "image": "", "download": "#"}, {"id": 66, "name": "تطبيق 066", "category": "عام", "image": "", "download": "#"}, {"id": 67, "name": "تطبيق 067", "category": "عام", "image": "", "download": "#"}, {"id": 68, "name": "تطبيق 068", "category": "عام", "image": "", "download": "#"}, {"id": 69, "name": "تطبيق 069", "category": "عام", "image": "", "download": "#"}, {"id": 70, "name": "تطبيق 070", "category": "عام", "image": "", "download": "#"}, {"id": 71, "name": "تطبيق 071", "category": "عام", "image": "", "download": "#"}, {"id": 72, "name": "تطبيق 072", "category": "عام", "image": "", "download": "#"}, {"id": 73, "name": "تطبيق 073", "category": "عام", "image": "", "download": "#"}, {"id": 74, "name": "تطبيق 074", "category": "عام", "image": "", "download": "#"}, {"id": 75, "name": "تطبيق 075", "category": "عام", "image": "", "download": "#"}, {"id": 76, "name": "تطبيق 076", "category": "عام", "image": "", "download": "#"}, {"id": 77, "name": "تطبيق 077", "category": "عام", "image": "", "download": "#"}, {"id": 78, "name": "تطبيق 078", "category": "عام", "image": "", "download": "#"}, {"id": 79, "name": "تطبيق 079", "category": "عام", "image": "", "download": "#"}, {"id": 80, "name": "تطبيق 080", "category": "عام", "image": "", "download": "#"}, {"id": 81, "name": "تطبيق 081", "category": "عام", "image": "", "download": "#"}, {"id": 82, "name": "تطبيق 082", "category": "عام", "image": "", "download": "#"}, {"id": 83, "name": "تطبيق 083", "category": "عام", "image": "", "download": "#"}, {"id": 84, "name": "تطبيق 084", "category": "عام", "image": "", "download": "#"}, {"id": 85, "name": "تطبيق 085", "category": "عام", "image": "", "download": "#"}, {"id": 86, "name": "تطبيق 086", "category": "عام", "image": "", "download": "#"}, {"id": 87, "name": "تطبيق 087", "category": "عام", "image": "", "download": "#"}, {"id": 88, "name": "تطبيق 088", "category": "عام", "image": "", "download": "#"}, {"id": 89, "name": "تطبيق 089", "category": "عام", "image": "", "download": "#"}, {"id": 90, "name": "تطبيق 090", "category": "عام", "image": "", "download": "#"}, {"id": 91, "name": "تطبيق 091", "category": "عام", "image": "", "download": "#"}, {"id": 92, "name": "تطبيق 092", "category": "عام", "image": "", "download": "#"}, {"id": 93, "name": "تطبيق 093", "category": "عام", "image": "", "download": "#"}, {"id": 94, "name": "تطبيق 094", "category": "عام", "image": "", "download": "#"}, {"id": 95, "name": "تطبيق 095", "category": "عام", "image": "", "download": "#"}, {"id": 96, "name": "تطبيق 096", "category": "عام", "image": "", "download": "#"}, {"id": 97, "name": "تطبيق 097", "category": "عام", "image": "", "download": "#"}, {"id": 98, "name": "تطبيق 098", "category": "عام", "image": "", "download": "#"}, {"id": 99, "name": "تطبيق 099", "category": "عام", "image": "", "download": "#"}, {"id": 100, "name": "تطبيق 100", "category": "عام", "image": "", "download": "#"}, {"id": 101, "name": "تطبيق 101", "category": "عام", "image": "", "download": "#"}, {"id": 102, "name": "تطبيق 102", "category": "عام", "image": "", "download": "#"}, {"id": 103, "name": "تطبيق 103", "category": "عام", "image": "", "download": "#"}, {"id": 104, "name": "تطبيق 104", "category": "عام", "image": "", "download": "#"}, {"id": 105, "name": "تطبيق 105", "category": "عام", "image": "", "download": "#"}, {"id": 106, "name": "تطبيق 106", "category": "عام", "image": "", "download": "#"}, {"id": 107, "name": "تطبيق 107", "category": "عام", "image": "", "download": "#"}, {"id": 108, "name": "تطبيق 108", "category": "عام", "image": "", "download": "#"}, {"id": 109, "name": "تطبيق 109", "category": "عام", "image": "", "download": "#"}, {"id": 110, "name": "تطبيق 110", "category": "عام", "image": "", "download": "#"}, {"id": 111, "name": "تطبيق 111", "category": "عام", "image": "", "download": "#"}, {"id": 112, "name": "تطبيق 112", "category": "عام", "image": "", "download": "#"}, {"id": 113, "name": "تطبيق 113", "category": "عام", "image": "", "download": "#"}, {"id": 114, "name": "تطبيق 114", "category": "عام", "image": "", "download": "#"}, {"id": 115, "name": "تطبيق 115", "category": "عام", "image": "", "download": "#"}, {"id": 116, "name": "تطبيق 116", "category": "عام", "image": "", "download": "#"}, {"id": 117, "name": "تطبيق 117", "category": "عام", "image": "", "download": "#"}, {"id": 118, "name": "تطبيق 118", "category": "عام", "image": "", "download": "#"}, {"id": 119, "name": "تطبيق 119", "category": "عام", "image": "", "download": "#"}, {"id": 120, "name": "تطبيق 120", "category": "عام", "image": "", "download": "#"}];
+if(!data.apps.length) data.apps=[
+{"id":1,"name":"تطبيق 001","category":"عام","image":"","download":"#"},
+{"id":2,"name":"تطبيق 002","category":"عام","image":"","download":"#"},
+{"id":3,"name":"تطبيق 003","category":"عام","image":"","download":"#"},
+{"id":4,"name":"تطبيق 004","category":"عام","image":"","download":"#"},
+{"id":5,"name":"تطبيق 005","category":"عام","image":"","download":"#"},
+{"id":6,"name":"تطبيق 006","category":"عام","image":"","download":"#"},
+{"id":7,"name":"تطبيق 007","category":"عام","image":"","download":"#"},
+{"id":8,"name":"تطبيق 008","category":"عام","image":"","download":"#"},
+{"id":9,"name":"تطبيق 009","category":"عام","image":"","download":"#"},
+{"id":10,"name":"تطبيق 010","category":"عام","image":"","download":"#"},
+{"id":11,"name":"تطبيق 011","category":"عام","image":"","download":"#"},
+{"id":12,"name":"تطبيق 012","category":"عام","image":"","download":"#"},
+{"id":13,"name":"تطبيق 013","category":"عام","image":"","download":"#"},
+{"id":14,"name":"تطبيق 014","category":"عام","image":"","download":"#"},
+{"id":15,"name":"تطبيق 015","category":"عام","image":"","download":"#"},
+{"id":16,"name":"تطبيق 016","category":"عام","image":"","download":"#"},
+{"id":17,"name":"تطبيق 017","category":"عام","image":"","download":"#"},
+{"id":18,"name":"تطبيق 018","category":"عام","image":"","download":"#"},
+{"id":19,"name":"تطبيق 019","category":"عام","image":"","download":"#"},
+{"id":20,"name":"تطبيق 020","category":"عام","image":"","download":"#"},
+{"id":21,"name":"تطبيق 021","category":"عام","image":"","download":"#"},
+{"id":22,"name":"تطبيق 022","category":"عام","image":"","download":"#"},
+{"id":23,"name":"تطبيق 023","category":"عام","image":"","download":"#"},
+{"id":24,"name":"تطبيق 024","category":"عام","image":"","download":"#"},
+{"id":25,"name":"تطبيق 025","category":"عام","image":"","download":"#"},
+{"id":26,"name":"تطبيق 026","category":"عام","image":"","download":"#"},
+{"id":27,"name":"تطبيق 027","category":"عام","image":"","download":"#"},
+{"id":28,"name":"تطبيق 028","category":"عام","image":"","download":"#"},
+{"id":29,"name":"تطبيق 029","category":"عام","image":"","download":"#"},
+{"id":30,"name":"تطبيق 030","category":"عام","image":"","download":"#"},
+{"id":31,"name":"تطبيق 031","category":"عام","image":"","download":"#"},
+{"id":32,"name":"تطبيق 032","category":"عام","image":"","download":"#"},
+{"id":33,"name":"تطبيق 033","category":"عام","image":"","download":"#"},
+{"id":34,"name":"تطبيق 034","category":"عام","image":"","download":"#"},
+{"id":35,"name":"تطبيق 035","category":"عام","image":"","download":"#"},
+{"id":36,"name":"تطبيق 036","category":"عام","image":"","download":"#"},
+{"id":37,"name":"تطبيق 037","category":"عام","image":"","download":"#"},
+{"id":38,"name":"تطبيق 038","category":"عام","image":"","download":"#"},
+{"id":39,"name":"تطبيق 039","category":"عام","image":"","download":"#"},
+{"id":40,"name":"تطبيق 040","category":"عام","image":"","download":"#"},
+{"id":41,"name":"تطبيق 041","category":"عام","image":"","download":"#"},
+{"id":42,"name":"تطبيق 042","category":"عام","image":"","download":"#"},
+{"id":43,"name":"تطبيق 043","category":"عام","image":"","download":"#"},
+{"id":44,"name":"تطبيق 044","category":"عام","image":"","download":"#"},
+{"id":45,"name":"تطبيق 045","category":"عام","image":"","download":"#"},
+{"id":46,"name":"تطبيق 046","category":"عام","image":"","download":"#"},
+{"id":47,"name":"تطبيق 047","category":"عام","image":"","download":"#"},
+{"id":48,"name":"تطبيق 048","category":"عام","image":"","download":"#"},
+{"id":49,"name":"تطبيق 049","category":"عام","image":"","download":"#"},
+{"id":50,"name":"تطبيق 050","category":"عام","image":"","download":"#"},
+{"id":51,"name":"تطبيق 051","category":"عام","image":"","download":"#"},
+{"id":52,"name":"تطبيق 052","category":"عام","image":"","download":"#"},
+{"id":53,"name":"تطبيق 053","category":"عام","image":"","download":"#"},
+{"id":54,"name":"تطبيق 054","category":"عام","image":"","download":"#"},
+{"id":55,"name":"تطبيق 055","category":"عام","image":"","download":"#"},
+{"id":56,"name":"تطبيق 056","category":"عام","image":"","download":"#"},
+{"id":57,"name":"تطبيق 057","category":"عام","image":"","download":"#"},
+{"id":58,"name":"تطبيق 058","category":"عام","image":"","download":"#"},
+{"id":59,"name":"تطبيق 059","category":"عام","image":"","download":"#"},
+{"id":60,"name":"تطبيق 060","category":"عام","image":"","download":"#"},
+{"id":61,"name":"تطبيق 061","category":"عام","image":"","download":"#"},
+{"id":62,"name":"تطبيق 062","category":"عام","image":"","download":"#"},
+{"id":63,"name":"تطبيق 063","category":"عام","image":"","download":"#"},
+{"id":64,"name":"تطبيق 064","category":"عام","image":"","download":"#"},
+{"id":65,"name":"تطبيق 065","category":"عام","image":"","download":"#"},
+{"id":66,"name":"تطبيق 066","category":"عام","image":"","download":"#"},
+{"id":67,"name":"تطبيق 067","category":"عام","image":"","download":"#"},
+{"id":68,"name":"تطبيق 068","category":"عام","image":"","download":"#"},
+{"id":69,"name":"تطبيق 069","category":"عام","image":"","download":"#"},
+{"id":70,"name":"تطبيق 070","category":"عام","image":"","download":"#"},
+{"id":71,"name":"تطبيق 071","category":"عام","image":"","download":"#"},
+{"id":72,"name":"تطبيق 072","category":"عام","image":"","download":"#"},
+{"id":73,"name":"تطبيق 073","category":"عام","image":"","download":"#"},
+{"id":74,"name":"تطبيق 074","category":"عام","image":"","download":"#"},
+{"id":75,"name":"تطبيق 075","category":"عام","image":"","download":"#"},
+{"id":76,"name":"تطبيق 076","category":"عام","image":"","download":"#"},
+{"id":77,"name":"تطبيق 077","category":"عام","image":"","download":"#"},
+{"id":78,"name":"تطبيق 078","category":"عام","image":"","download":"#"},
+{"id":79,"name":"تطبيق 079","category":"عام","image":"","download":"#"},
+{"id":80,"name":"تطبيق 080","category":"عام","image":"","download":"#"},
+{"id":81,"name":"تطبيق 081","category":"عام","image":"","download":"#"},
+{"id":82,"name":"تطبيق 082","category":"عام","image":"","download":"#"},
+{"id":83,"name":"تطبيق 083","category":"عام","image":"","download":"#"},
+{"id":84,"name":"تطبيق 084","category":"عام","image":"","download":"#"},
+{"id":85,"name":"تطبيق 085","category":"عام","image":"","download":"#"},
+{"id":86,"name":"تطبيق 086","category":"عام","image":"","download":"#"},
+{"id":87,"name":"تطبيق 087","category":"عام","image":"","download":"#"},
+{"id":88,"name":"تطبيق 088","category":"عام","image":"","download":"#"},
+{"id":89,"name":"تطبيق 089","category":"عام","image":"","download":"#"},
+{"id":90,"name":"تطبيق 090","category":"عام","image":"","download":"#"},
+{"id":91,"name":"تطبيق 091","category":"عام","image":"","download":"#"},
+{"id":92,"name":"تطبيق 092","category":"عام","image":"","download":"#"},
+{"id":93,"name":"تطبيق 093","category":"عام","image":"","download":"#"},
+{"id":94,"name":"تطبيق 094","category":"عام","image":"","download":"#"},
+{"id":95,"name":"تطبيق 095","category":"عام","image":"","download":"#"},
+{"id":96,"name":"تطبيق 096","category":"عام","image":"","download":"#"},
+{"id":97,"name":"تطبيق 097","category":"عام","image":"","download":"#"},
+{"id":98,"name":"تطبيق 098","category":"عام","image":"","download":"#"},
+{"id":99,"name":"تطبيق 099","category":"عام","image":"","download":"#"},
+{"id":100,"name":"تطبيق 100","category":"عام","image":"","download":"#"}
+];
 document.getElementById("title").textContent=data.siteName;
 document.getElementById("subtitle").textContent=data.subtitle;
-const grid=document.getElementById("grid"),search=document.getElementById("search"),count=document.getElementById("count"),cats=document.getElementById("cats");
+const grid=document.getElementById("grid");
+const search=document.getElementById("search");
+const count=document.getElementById("count");
+const cats=document.getElementById("cats");
 let active="الكل";
-function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
 function render(){
- let q=search.value.toLowerCase().trim();
- let list=data.apps.filter(a=>(active==="الكل"||a.category===active)&&((a.name+" "+a.category).toLowerCase().includes(q)));
- count.textContent="عدد التطبيقات: "+list.length;
- grid.innerHTML=list.map(a=>`<article class="card"><div class="appimg">${a.image?`<img src="${esc(a.image)}">`:`<div class="ph">APP</div>`}</div><div class="name">${esc(a.name)}</div><a class="download" href="${a.download||"#"}">⬇ تحميل</a></article>`).join("");
+  let q=search.value.toLowerCase().trim();
+  let list=data.apps.filter(a=>(active==="الكل"||a.category===active)&&((a.name+" "+a.category).toLowerCase().includes(q)));
+  count.textContent="عدد التطبيقات: "+list.length;
+  grid.innerHTML=list.map(a=>`<article class="card">
+    <div class="appimg">${a.image?`<img src="${esc(a.image)}">`:`<div class="ph">APP</div>`}</div>
+    <div class="name">${esc(a.name)}</div>
+    <a class="download" href="${esc(a.download||"#")}" target="_blank">⬇ Download APK</a>
+  </article>`).join("");
 }
 function categories(){
- let cs=["الكل",...new Set(data.apps.map(a=>a.category||"عام"))];
- cats.innerHTML=cs.map(c=>`<button class="cat ${c===active?"active":""}" onclick="active='${esc(c)}';categories();render()">${esc(c)}</button>`).join("");
+  let cs=["الكل",...new Set(data.apps.map(a=>a.category||"عام"))];
+  cats.innerHTML=cs.map(c=>`<button class="cat ${c===active?"active":""}" onclick='active=${JSON.stringify(c)};categories();render()'>${esc(c)}</button>`).join("");
 }
-search.oninput=render;categories();render();
-</script></body></html>
+search.oninput=render;
+categories();
+render();
+</script>
+</body>
+</html>
