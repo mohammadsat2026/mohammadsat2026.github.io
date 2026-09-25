@@ -36,6 +36,32 @@ input,select{border:0;border-radius:18px;padding:14px;font-size:15px;outline:0;b
 header{margin:9px}
 .logo{width:105px;height:105px}
 h1{font-size:25px}
+} 
+  <button id="theme-toggle" 
+    style="position:fixed; top:15px; right:15px; z-index:9999; 
+           width:45px; height:45px; border-radius:50%; border:none; 
+           background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.15); 
+           font-size:20px; cursor:pointer;">
+    🌙
+</button> body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e, #16213e) !important;
+    color: #eee !important;
+}
+body.dark-mode .card,
+body.dark-mode header,
+body.dark-mode .tools,
+body.dark-mode .cat {
+    background: #2a2a3e !important;
+    color: #eee !important;
+}
+body.dark-mode .name,
+body.dark-mode h1 {
+    color: #eee !important;
+}
+body.dark-mode input,
+body.dark-mode select {
+    background: #2a2a3e !important;
+    color: #eee !important;
 }
 </style>
 </head>
