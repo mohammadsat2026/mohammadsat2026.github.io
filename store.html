@@ -825,14 +825,6 @@ function closeAll() {
     document.querySelectorAll('.sidebar').forEach(s => s.classList.remove('open'));
     document.getElementById('overlay').classList.remove('show');
 }
-
-/* الوضع الليلي التلقائي حسب الوقت */
-function setThemeByTime() {
-    const hour = new Date().getHours();
-    if (hour >= 18 || hour < 6) {
-        document.body.classList.add('dark-mode');
-    } else {
-        document.body.classList.remove('dark-mode');
     }
 }
 setThemeByTime();
