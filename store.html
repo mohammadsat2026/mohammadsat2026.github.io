@@ -6,61 +6,29 @@
 <title>رامي للستلايت | متجرك الأول</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
-:root {
-    --bg: #f8f8f8;
-    --card: #ffffff;
-    --text: #111111;
-    --text-light: #888888;
-    --border: #eeeeee;
-    --top-bar: #111111;
-    --top-bar-text: #ffd700;
-    --primary: #ffd700;
-    --primary-text: #111111;
-    --sidebar-bg: #111111;
-    --sidebar-text: #ffd700;
-}
-body.dark-mode {
-    --bg: #0a0a0a;
-    --card: #1a1a1a;
-    --text: #ffffff;
-    --text-light: #999999;
-    --border: #333333;
-    --top-bar: #000000;
-    --top-bar-text: #ffd700;
-    --primary: #ffd700;
-    --primary-text: #111111;
-    --sidebar-bg: #000000;
-    --sidebar-text: #ffd700;
-}
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-    font-family: 'Cairo', Tahoma, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    transition: background 0.4s, color 0.4s;
-}
+body { font-family: 'Cairo', Tahoma, sans-serif; background: #f8f8f8; color: #111; }
 
-/* الشريط العلوي الثابت */
+/* الشريط العلوي */
 .top-bar {
-    background: var(--top-bar);
-    color: var(--top-bar-text);
+    background: #111;
+    color: #ffd700;
     text-align: center;
-    padding: 10px 15px;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.6;
+    padding: 12px 15px;
+    font-size: 14px;
+    font-weight: 700;
 }
+.top-bar span { margin: 0 8px; }
 
 /* الهيدر */
 header {
-    background: var(--card);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    background: #111;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     position: sticky;
     top: 0;
     z-index: 100;
     padding: 15px 20px;
-    transition: background 0.4s;
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 2px solid #ffd700;
 }
 .header-inner {
     max-width: 1300px;
@@ -72,45 +40,21 @@ header {
 }
 .logo-area { display: flex; align-items: center; gap: 12px; }
 .logo-area img {
-    width: 55px; height: 55px;
+    width: 60px; height: 60px;
     border-radius: 50%;
-    border: 2px solid var(--primary);
+    border: 2px solid #ffd700;
     object-fit: cover;
 }
 .logo-area h1 {
     font-size: 22px;
     font-weight: 900;
-    color: var(--text);
-}
-.logo-area p { font-size: 11px; color: var(--text-light); margin-top: -3px; }
-.header-search { flex: 1; max-width: 450px; position: relative; }
-.header-search input {
-    width: 100%;
-    padding: 12px 45px 12px 18px;
-    border: 2px solid var(--border);
-    background: var(--bg);
-    color: var(--text);
-    border-radius: 30px;
-    font-size: 14px;
-    font-family: inherit;
-    outline: none;
-    transition: 0.3s;
-}
-.header-search input:focus { border-color: var(--primary); }
-.header-search::before {
-    content: '🔍';
-    position: absolute;
-    right: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    pointer-events: none;
+    color: #ffd700;
 }
 .header-icons { display: flex; gap: 10px; align-items: center; }
 .icon-btn {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text);
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ffd700;
     width: 45px; height: 45px;
     border-radius: 50%;
     font-size: 20px;
@@ -121,7 +65,7 @@ header {
     align-items: center;
     justify-content: center;
 }
-.icon-btn:hover { background: var(--primary); color: var(--primary-text); transform: scale(1.08); }
+.icon-btn:hover { background: #ffd700; color: #111; }
 .badge {
     position: absolute;
     top: -3px; right: -3px;
@@ -137,138 +81,112 @@ header {
     padding: 0 5px;
 }
 
+/* البحث */
+.search-section {
+    background: #111;
+    padding: 0 20px 15px;
+}
+.search-box {
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+}
+.search-box input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: 2px solid #ffd700;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+}
+.search-box input::placeholder { color: #888; }
+.search-box::before {
+    content: '🔍';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+}
+
 /* التصنيفات */
 .categories-bar {
-    background: var(--card);
-    border-top: 1px solid var(--border);
-    padding: 0 20px;
+    background: #111;
+    padding: 0 20px 15px;
     overflow-x: auto;
     white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .categories-inner {
     max-width: 1300px;
     margin: auto;
     display: flex;
-    gap: 5px;
+    gap: 8px;
 }
 .cat-btn {
-    background: none;
-    border: none;
-    padding: 15px 18px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 10px 18px;
     font-size: 14px;
     font-weight: 700;
-    color: var(--text-light);
+    border-radius: 30px;
     cursor: pointer;
     font-family: inherit;
-    position: relative;
     transition: 0.3s;
     white-space: nowrap;
 }
-.cat-btn:hover { color: var(--text); }
-.cat-btn.active { color: var(--text); }
-.cat-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0; right: 15px; left: 15px;
-    height: 3px;
-    background: var(--primary);
-    border-radius: 3px;
-}
-
-/* البانر */
-.banner { max-width: 1300px; margin: 25px auto; padding: 0 20px; }
-.banner-inner {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 20px;
-    padding: 45px 30px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-.banner-inner::before {
-    content: '';
-    position: absolute;
-    top: -50%; right: -20%;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(255,215,0,0.2), transparent);
-    border-radius: 50%;
-}
-.banner h2 {
-    font-size: 30px;
-    font-weight: 900;
-    margin-bottom: 10px;
-    position: relative;
-}
-.banner h2 span { color: #ffd700; }
-.banner p { font-size: 15px; opacity: 0.95; position: relative; }
-.banner .old-price-text {
-    text-decoration: line-through;
-    opacity: 0.7;
-    font-size: 14px;
-}
-
-/* عنوان القسم */
-.section-title {
-    max-width: 1300px;
-    margin: 30px auto 15px;
-    padding: 0 20px;
-    font-size: 22px;
-    font-weight: 900;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.section-title::before {
-    content: '';
-    width: 5px; height: 25px;
-    background: var(--primary);
-    border-radius: 3px;
+.cat-btn:hover { border-color: #ffd700; color: #ffd700; }
+.cat-btn.active {
+    background: #ffd700;
+    color: #111;
+    border-color: #ffd700;
 }
 
 /* شبكة المنتجات */
 .products-grid {
     max-width: 1300px;
-    margin: 0 auto 40px;
+    margin: 25px auto 40px;
     padding: 0 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 .product-card {
-    background: var(--card);
+    background: white;
     border-radius: 16px;
     overflow: hidden;
     transition: 0.3s;
     position: relative;
-    border: 1px solid var(--border);
+    border: 1px solid #eee;
 }
 .product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    border-color: var(--primary);
+    border-color: #ffd700;
 }
 .discount-badge {
     position: absolute;
     top: 12px; right: 12px;
     background: #e63946;
     color: white;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 20px;
     z-index: 5;
 }
 .fav-btn {
     position: absolute;
     top: 12px; left: 12px;
-    background: var(--card);
+    background: white;
     border: none;
-    width: 38px; height: 38px;
+    width: 40px; height: 40px;
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     transition: 0.3s;
@@ -286,33 +204,32 @@ header {
     color: #999;
     overflow: hidden;
 }
-body.dark-mode .product-img { background: linear-gradient(135deg, #222, #2a2a2a); }
 .product-img img { width: 100%; height: 100%; object-fit: cover; }
-.product-info { padding: 15px; }
+.product-info { padding: 16px; }
 .product-cat {
-    font-size: 11px;
-    color: var(--text-light);
+    font-size: 12px;
+    color: #999;
     margin-bottom: 5px;
     font-weight: 600;
 }
 .product-name {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
-    color: var(--text);
+    color: #111;
     margin-bottom: 10px;
-    min-height: 44px;
+    min-height: 48px;
     line-height: 1.5;
 }
 .product-price {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 900;
-    color: var(--text);
+    color: #111;
     margin-bottom: 12px;
 }
-.product-price span { font-size: 13px; color: var(--text-light); font-weight: 600; }
+.product-price span { font-size: 14px; color: #999; font-weight: 600; }
 .product-price .old-price {
-    font-size: 14px;
-    color: var(--text-light);
+    font-size: 15px;
+    color: #999;
     text-decoration: line-through;
     margin-left: 8px;
     font-weight: 600;
@@ -320,12 +237,12 @@ body.dark-mode .product-img { background: linear-gradient(135deg, #222, #2a2a2a)
 .order-btn {
     display: block;
     width: 100%;
-    padding: 13px;
+    padding: 14px;
     border: none;
     border-radius: 10px;
-    background: var(--primary);
-    color: var(--primary-text);
-    font-size: 14px;
+    background: #ffd700;
+    color: #111;
+    font-size: 15px;
     font-weight: 900;
     cursor: pointer;
     font-family: inherit;
@@ -339,7 +256,7 @@ body.dark-mode .product-img { background: linear-gradient(135deg, #222, #2a2a2a)
     top: 0; left: -420px;
     width: 400px; max-width: 92%;
     height: 100vh;
-    background: var(--card);
+    background: white;
     z-index: 999;
     box-shadow: -5px 0 30px rgba(0,0,0,0.3);
     transition: 0.4s;
@@ -348,25 +265,25 @@ body.dark-mode .product-img { background: linear-gradient(135deg, #222, #2a2a2a)
 }
 .sidebar.open { left: 0; }
 .sidebar-header {
-    background: var(--sidebar-bg);
-    color: var(--sidebar-text);
+    background: #111;
+    color: #ffd700;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.sidebar-header h3 { font-size: 18px; font-weight: 900; }
+.sidebar-header h3 { font-size: 20px; font-weight: 900; }
 .close-btn {
     background: rgba(255,215,0,0.2);
     border: none;
-    color: var(--sidebar-text);
-    width: 35px; height: 35px;
+    color: #ffd700;
+    width: 38px; height: 38px;
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
 }
 .sidebar-body { flex: 1; overflow-y: auto; padding: 15px; }
-.empty-msg { text-align: center; color: var(--text-light); padding: 40px 20px; font-size: 15px; }
+.empty-msg { text-align: center; color: #999; padding: 40px 20px; font-size: 16px; }
 .overlay {
     position: fixed;
     top: 0; left: 0;
@@ -378,12 +295,7 @@ body.dark-mode .product-img { background: linear-gradient(135deg, #222, #2a2a2a)
 .overlay.show { display: block; }
 
 /* طرق الدفع */
-.payment-methods {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-}
+.payment-methods { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 .payment-btn {
     flex: 1;
     min-width: 100px;
@@ -391,132 +303,147 @@ body.dark-mode .product-img { background: linear-gradient(135deg, #222, #2a2a2a)
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 12px;
+    padding: 14px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 15px;
     transition: 0.3s;
 }
-.pay-click {
-    background: #4CAF50;
-    color: white;
-}
+.pay-click { background: #4CAF50; color: white; }
 .pay-click:hover { background: #388E3C; }
-.pay-paypal {
-    background: #003087;
-    color: white;
-}
+.pay-paypal { background: #003087; color: white; }
 .pay-paypal:hover { background: #001c4d; }
-.pay-cash {
-    background: #ffd700;
-    color: #111;
-}
+.pay-cash { background: #ffd700; color: #111; }
 .pay-cash:hover { background: #e6c200; }
 
 /* الفوتر */
 footer {
     background: #111;
     color: #ccc;
-    padding: 45px 20px 20px;
+    padding: 50px 20px 25px;
     margin-top: 40px;
 }
-body.dark-mode footer { background: #000; }
 .footer-inner {
     max-width: 1300px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 35px;
 }
 .footer-col h3 {
     color: #ffd700;
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 20px;
+    margin-bottom: 18px;
     font-weight: 900;
 }
-.footer-col p { font-size: 13px; margin-bottom: 8px; line-height: 1.7; color: #aaa; }
+.footer-col p {
+    font-size: 15px;
+    margin-bottom: 10px;
+    line-height: 1.8;
+    color: #ccc;
+}
 .footer-col a {
-    color: #aaa;
+    color: #ccc;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     transition: 0.3s;
+    line-height: 1.8;
 }
 .footer-col a:hover { color: #ffd700; }
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #333;
-    font-size: 12px;
-    color: #666;
-}
-.footer-payment-logos {
+.social-icons {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    gap: 12px;
     margin-top: 15px;
-    align-items: center;
     flex-wrap: wrap;
 }
-.footer-payment-logos img {
-    height: 30px;
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.social-icons a:hover { transform: scale(1.15); }
+.social-icons svg { width: 24px; height: 24px; fill: white; }
+.payment-logos {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.payment-logos span {
     background: white;
-    padding: 4px 10px;
-    border-radius: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 15px;
+    color: #111;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #888;
 }
 
 /* زر واتساب عائم */
 .float-wa {
     position: fixed;
     bottom: 20px; left: 20px;
-    width: 60px; height: 60px;
+    width: 62px; height: 62px;
     border-radius: 50%;
     background: #25D366;
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    text-decoration: none;
     box-shadow: 0 5px 20px rgba(37,211,102,0.5);
     z-index: 500;
     transition: 0.3s;
+    text-decoration: none;
 }
 .float-wa:hover { transform: scale(1.1); }
+.float-wa svg { width: 35px; height: 35px; fill: white; }
 
 /* موبايل */
 @media (max-width: 768px) {
-    .header-inner { flex-wrap: wrap; gap: 10px; }
+    .header-inner { gap: 10px; }
     .logo-area h1 { font-size: 16px; }
     .logo-area img { width: 48px; height: 48px; }
-    .header-search { order: 3; flex: 100%; max-width: 100%; }
     .icon-btn { width: 42px; height: 42px; font-size: 18px; }
-    .banner h2 { font-size: 20px; }
-    .banner-inner { padding: 30px 15px; }
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         padding: 0 10px 20px;
     }
-    .product-img { height: 150px; font-size: 40px; }
-    .product-name { font-size: 12px; min-height: 38px; }
-    .product-price { font-size: 16px; }
-    .order-btn { font-size: 12px; padding: 10px; }
-    .section-title { font-size: 17px; padding: 0 15px; }
-    .cat-btn { padding: 12px 12px; font-size: 12px; }
-    .footer-inner { gap: 20px; }
-    .top-bar { font-size: 11px; padding: 8px 10px; }
+    .product-img { height: 150px; font-size: 45px; }
+    .product-name { font-size: 13px; min-height: 40px; }
+    .product-price { font-size: 17px; }
+    .order-btn { font-size: 13px; padding: 11px; }
+    .cat-btn { padding: 8px 14px; font-size: 13px; }
+    .footer-inner { gap: 25px; }
+    .top-bar { font-size: 12px; padding: 10px; }
+    .footer-col h3 { font-size: 17px; }
+    .footer-col p, .footer-col a { font-size: 14px; }
 }
 </style>
 </head>
 <body>
 
-<!-- الشريط الثابت -->
+<!-- الشريط العلوي -->
 <div class="top-bar">
-    🚚 متوفر توصيل لجميع أنحاء المملكة &nbsp;•&nbsp; 💳 الدفع عند التسليم أو تحويل كليك
+    🚚 توصيل لجميع أنحاء المملكة <span>•</span> 💳 الدفع عند التسليم أو كليك
 </div>
 
 <!-- الهيدر -->
@@ -524,13 +451,7 @@ body.dark-mode footer { background: #000; }
     <div class="header-inner">
         <div class="logo-area">
             <img src="logo.png" alt="رامي للستلايت">
-            <div>
-                <h1>رامي للستلايت</h1>
-                <p>متوفر جميع انواع الريسيفرات</p>
-            </div>
-        </div>
-        <div class="header-search">
-            <input type="text" id="search" placeholder="ابحث عن منتج...">
+            <h1>رامي للستلايت</h1>
         </div>
         <div class="header-icons">
             <button class="icon-btn" onclick="openFav()">
@@ -543,29 +464,28 @@ body.dark-mode footer { background: #000; }
     </div>
 </header>
 
+<!-- البحث -->
+<div class="search-section">
+    <div class="search-box">
+        <input type="text" id="search" placeholder="ابحث عن منتج...">
+    </div>
+</div>
+
 <!-- التصنيفات -->
 <div class="categories-bar">
     <div class="categories-inner">
-        <button class="cat-btn active" onclick="filterCat('all', this)">🏠 الرئيسية</button>
-        <button class="cat-btn" onclick="filterCat('iptv', this)"> ريسيفرات</button>
-        <button class="cat-btn" onclick="filterCat('receivers', this)">اشتراكات IPTV</button>
-        <button class="cat-btn" onclick="filterCat('screens', this)">ريموتات شاشات</button>
-        <button class="cat-btn" onclick="filterCat('holders', this)">  حمالات شاشات</button>
-        <button class="cat-btn" onclick="filterCat('tools', this)"> لواقط </button>
+        <button class="cat-btn active" onclick="filterCat('all', this)">🏠 الكل</button>
+        <button class="cat-btn" onclick="filterCat('iptv', this)">📺 اشتراكات IPTV</button>
+        <button class="cat-btn" onclick="filterCat('receivers', this)">📡 ريسيفرات</button>
+        <button class="cat-btn" onclick="filterCat('screens', this)">📺 شاشات</button>
+        <button class="cat-btn" onclick="filterCat('remotes', this)">🎮 ريموتات</button>
+        <button class="cat-btn" onclick="filterCat('holders', this)">🔌 حمالات</button>
+        <button class="cat-btn" onclick="filterCat('tools', this)">🛠️ عدة وأدوات</button>
         <button class="cat-btn" onclick="filterCat('offers', this)">🎁 عروض خاصة</button>
     </div>
 </div>
 
-<!-- البانر -->
-<div class="banner">
-    <div class="banner-inner">
-        <h2>🔥 عروض <span>الأسبوع</span></h2>
-        <p>خصومات حتى 30% على الاشتراكات والريسيفرات</p>
-    </div>
-</div>
-
 <!-- المنتجات -->
-<div class="section-title" id="section-title">🔥 جميع المنتجات</div>
 <div class="products-grid" id="products"></div>
 
 <!-- السلة -->
@@ -592,15 +512,26 @@ body.dark-mode footer { background: #000; }
 
 <div class="overlay" id="overlay" onclick="closeAll()"></div>
 
-<a href="https://wa.me/962797639392" target="_blank" class="float-wa">💬</a>
+<!-- زر واتساب عائم -->
+<a href="https://wa.me/962797639392" target="_blank" class="float-wa">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
 
 <!-- الفوتر -->
 <footer>
     <div class="footer-inner">
         <div class="footer-col">
             <h3>رامي للستلايت</h3>
-            <p>وجهتك الأولى لأقوى اشتراكات IPTV وجميع مستلزمات الستلايت.</p>
+            <p>متوفر لدينا جميع مستلزمات الستلايت — اشتراكات، ريسيفرات، شاشات، وحمالات.</p>
             <p>📍 عمّان، الأردن</p>
+            <div class="social-icons">
+                <a href="https://wa.me/962797639392" target="_blank" style="background:#25D366;">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/share/19LLBHJqDb/" target="_blank" style="background:#1877F2;">
+                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+            </div>
         </div>
         <div class="footer-col">
             <h3>تواصل معنا</h3>
@@ -611,13 +542,12 @@ body.dark-mode footer { background: #000; }
         </div>
         <div class="footer-col">
             <h3>طرق الدفع</h3>
-            <div class="payment-methods">
-                <a href="tel:0797639392" class="payment-btn pay-click">🟢 كليك</a>
-                <a href="https://www.paypal.com/paypalme/mohammadissa079" target="_blank" class="payment-btn pay-paypal">🅿️ PayPal</a>
-                <a href="tel:0797639392" class="payment-btn pay-cash">💵 عند التسليم</a>
+            <p>💳 متوفرة لدينا عدة طرق دفع</p>
+            <div class="payment-logos">
+                <span style="color:#4CAF50;">🟢 CliQ</span>
+                <span style="color:#1A1F71;">💳 Visa</span>
+                <span style="color:#FF9800;">💵 عند الاستلام</span>
             </div>
-            <p style="margin-top:12px; font-size:12px; color:#888;">كليك: 0797639392</p>
-            <p style="font-size:12px; color:#888;">PayPal: issarami7878@gmail.com</p>
         </div>
         <div class="footer-col">
             <h3>روابط سريعة</h3>
@@ -638,19 +568,22 @@ const products = [
     { id: 4, name: "اشتراك IPTV - سنة كاملة", category: "iptv", price: 35, oldPrice: 45, image: "", icon: "📺" },
     { id: 5, name: "رسيفر Android Box 4K", category: "receivers", price: 55, oldPrice: 0, image: "", icon: "📡" },
     { id: 6, name: "رسيفر 4K Pro", category: "receivers", price: 85, oldPrice: 100, image: "", icon: "📡" },
-    { id: 7, name: "حمالة شاشة حائط", category: "holders", price: 15, oldPrice: 0, image: "", icon: "🔌" },
-    { id: 8, name: "حمالة شاشة متحركة", category: "holders", price: 25, oldPrice: 30, image: "", icon: "🔌" },
-    { id: 9, name: "شاشة 32 بوصة", category: "screens", price: 120, oldPrice: 0, image: "", icon: "📺" },
-    { id: 10, name: "شاشة 43 بوصة Smart", category: "screens", price: 200, oldPrice: 230, image: "", icon: "📺" },
-    { id: 11, name: "عدة تركيب كاملة", category: "tools", price: 35, oldPrice: 0, image: "", icon: "🛠️" },
-    { id: 12, name: "كابل HDMI 2 متر", category: "tools", price: 5, oldPrice: 0, image: "", icon: "🔌" },
+    { id: 7, name: "ريموت شاشة سامسونج", category: "remotes", price: 15, oldPrice: 0, image: "", icon: "🎮" },
+    { id: 8, name: "ريموت شاشة LG", category: "remotes", price: 15, oldPrice: 20, image: "", icon: "🎮" },
+    { id: 9, name: "حمالة شاشة حائط", category: "holders", price: 15, oldPrice: 0, image: "", icon: "🔌" },
+    { id: 10, name: "حمالة شاشة متحركة", category: "holders", price: 25, oldPrice: 30, image: "", icon: "🔌" },
+    { id: 11, name: "شاشة 32 بوصة", category: "screens", price: 120, oldPrice: 0, image: "", icon: "📺" },
+    { id: 12, name: "شاشة 43 بوصة Smart", category: "screens", price: 200, oldPrice: 230, image: "", icon: "📺" },
+    { id: 13, name: "عدة تركيب كاملة", category: "tools", price: 35, oldPrice: 0, image: "", icon: "🛠️" },
+    { id: 14, name: "كابل HDMI 2 متر", category: "tools", price: 5, oldPrice: 0, image: "", icon: "🔌" },
 ];
 
 const catNames = {
-    all: "🔥 جميع المنتجات",
+    all: "🏠 الكل",
     iptv: "📺 اشتراكات IPTV",
     receivers: "📡 ريسيفرات",
     screens: "📺 شاشات",
+    remotes: "🎮 ريموتات",
     holders: "🔌 حمالات",
     tools: "🛠️ عدة وأدوات",
     offers: "🎁 عروض خاصة"
@@ -667,8 +600,6 @@ function renderProducts() {
         const matchSearch = p.name.toLowerCase().includes(search);
         return matchCat && matchSearch;
     });
-
-    document.getElementById('section-title').textContent = catNames[activeCat];
 
     const grid = document.getElementById('products');
     if (filtered.length === 0) {
@@ -735,7 +666,7 @@ function renderCart() {
     let html = cart.map(item => {
         total += item.price * item.qty;
         return `
-            <div style="display:flex; gap:10px; padding:12px; border-bottom:1px solid var(--border); align-items:center;">
+            <div style="display:flex; gap:10px; padding:12px; border-bottom:1px solid #eee; align-items:center;">
                 <div style="font-size:30px;">${item.icon}</div>
                 <div style="flex:1;">
                     <div style="font-weight:700; font-size:14px;">${item.name}</div>
@@ -749,7 +680,7 @@ function renderCart() {
     const msg = 'مرحبا، بدي أطلب:\n' + cart.map(i => `• ${i.name} × ${i.qty} = ${i.price * i.qty} د.أ`).join('\n') + `\n\nالإجمالي: ${total} د.أ`;
 
     html += `
-        <div style="padding:20px; text-align:center; border-top:2px solid var(--primary); margin-top:10px;">
+        <div style="padding:20px; text-align:center; border-top:2px solid #ffd700; margin-top:10px;">
             <div style="font-size:22px; font-weight:900; margin-bottom:15px;">
                 الإجمالي: ${total} د.أ
             </div>
@@ -759,81 +690,4 @@ function renderCart() {
                 💬 اطلب على واتساب
             </a>
             <div style="font-size:13px; font-weight:700; margin-bottom:10px;">أو اختر طريقة الدفع:</div>
-            <div class="payment-methods">
-                <a href="tel:0797639392" class="payment-btn pay-click">🟢 كليك</a>
-                <a href="https://www.paypal.com/paypalme/mohammadissa079" target="_blank" class="payment-btn pay-paypal">🅿️ PayPal</a>
-                <a href="https://wa.me/962797639392?text=${encodeURIComponent(msg + '\n\nالدفع: عند التسليم')}" target="_blank" class="payment-btn pay-cash">💵 عند التسليم</a>
-            </div>
-        </div>
-    `;
-    body.innerHTML = html;
-}
-
-function removeFromCart(id) {
-    cart = cart.filter(x => x.id !== id);
-    saveCart();
-}
-
-function toggleFav(id) {
-    if (fav.includes(id)) fav = fav.filter(x => x !== id);
-    else fav.push(id);
-    localStorage.setItem('fav', JSON.stringify(fav));
-    document.getElementById('fav-count').textContent = fav.length;
-    renderProducts();
-    renderFav();
-}
-
-function renderFav() {
-    const body = document.getElementById('fav-body');
-    if (fav.length === 0) {
-        body.innerHTML = '<div class="empty-msg">ما في منتجات بالمفضلة ❤️</div>';
-        return;
-    }
-    body.innerHTML = fav.map(id => {
-        const p = products.find(x => x.id === id);
-        if (!p) return '';
-        return `
-            <div style="display:flex; gap:10px; padding:12px; border-bottom:1px solid var(--border); align-items:center;">
-                <div style="font-size:30px;">${p.icon}</div>
-                <div style="flex:1;">
-                    <div style="font-weight:700; font-size:14px;">${p.name}</div>
-                    <div style="font-weight:900;">${p.price} د.أ</div>
-                </div>
-                <button onclick="addToCart(${p.id})" style="background:var(--primary); color:var(--primary-text); border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:bold;">🛒</button>
-            </div>
-        `;
-    }).join('');
-}
-
-function openCart() {
-    document.getElementById('cart-sidebar').classList.add('open');
-    document.getElementById('overlay').classList.add('show');
-}
-function closeCart() {
-    document.getElementById('cart-sidebar').classList.remove('open');
-    document.getElementById('overlay').classList.remove('show');
-}
-function openFav() {
-    document.getElementById('fav-sidebar').classList.add('open');
-    document.getElementById('overlay').classList.add('show');
-}
-function closeFav() {
-    document.getElementById('fav-sidebar').classList.remove('open');
-    document.getElementById('overlay').classList.remove('show');
-}
-function closeAll() {
-    document.querySelectorAll('.sidebar').forEach(s => s.classList.remove('open'));
-    document.getElementById('overlay').classList.remove('show');
-}
-    }
-}
-setThemeByTime();
-setInterval(setThemeByTime, 60000);
-
-renderProducts();
-saveCart();
-renderFav();
-</script>
-
-</body>
-</html>
+            <div class
