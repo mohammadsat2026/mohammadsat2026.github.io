@@ -11,25 +11,23 @@ body { font-family: 'Cairo', Tahoma, sans-serif; background: #f8f8f8; color: #11
 
 /* الشريط العلوي */
 .top-bar {
-    background: #0a0a0a;
-    color: #d4af37;
+    background: #111;
+    color: #ffd700;
     text-align: center;
     padding: 8px;
     font-size: 13px;
     font-weight: 600;
     overflow: hidden;
 }
-.top-bar marquee { font-family: inherit; }
 
-/* الهيدر */
+/* الهيدر الأبيض */
 header {
-    background: #0a0a0a;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 100;
     padding: 15px 20px;
-    border-bottom: 2px solid #d4af37;
 }
 .header-inner {
     max-width: 1300px;
@@ -41,32 +39,32 @@ header {
 }
 .logo-area { display: flex; align-items: center; gap: 12px; }
 .logo-area img {
-    width: 60px; height: 60px;
+    width: 55px; height: 55px;
     border-radius: 50%;
-    border: 2px solid #d4af37;
+    border: 2px solid #ffd700;
     object-fit: cover;
 }
 .logo-area h1 {
     font-size: 22px;
     font-weight: 900;
-    color: #d4af37;
+    color: #111;
 }
-.logo-area p { font-size: 11px; color: #999; margin-top: -3px; }
+.logo-area p { font-size: 11px; color: #888; margin-top: -3px; }
 .header-search { flex: 1; max-width: 450px; position: relative; }
 .header-search input {
     width: 100%;
     padding: 12px 45px 12px 18px;
-    border: 2px solid #333;
-    background: #1a1a1a;
-    color: #fff;
+    border: 2px solid #eee;
+    background: #f8f8f8;
+    color: #111;
     border-radius: 30px;
     font-size: 14px;
     font-family: inherit;
     outline: none;
     transition: 0.3s;
 }
-.header-search input::placeholder { color: #777; }
-.header-search input:focus { border-color: #d4af37; }
+.header-search input::placeholder { color: #999; }
+.header-search input:focus { border-color: #ffd700; background: #fffdf5; }
 .header-search::before {
     content: '🔍';
     position: absolute;
@@ -78,9 +76,9 @@ header {
 }
 .header-icons { display: flex; gap: 10px; align-items: center; }
 .icon-btn {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    color: #d4af37;
+    background: #f5f5f5;
+    border: none;
+    color: #111;
     width: 45px; height: 45px;
     border-radius: 50%;
     font-size: 20px;
@@ -91,7 +89,7 @@ header {
     align-items: center;
     justify-content: center;
 }
-.icon-btn:hover { background: #d4af37; color: #0a0a0a; transform: scale(1.08); }
+.icon-btn:hover { background: #ffd700; transform: scale(1.08); }
 .badge {
     position: absolute;
     top: -3px; right: -3px;
@@ -107,13 +105,14 @@ header {
     padding: 0 5px;
 }
 
-/* شريط التصنيفات */
+/* التصنيفات */
 .categories-bar {
-    background: #111;
-    border-top: 1px solid #333;
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
     padding: 0 20px;
     overflow-x: auto;
     white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .categories-inner {
     max-width: 1300px;
@@ -127,52 +126,51 @@ header {
     padding: 15px 18px;
     font-size: 14px;
     font-weight: 700;
-    color: #888;
+    color: #666;
     cursor: pointer;
     font-family: inherit;
     position: relative;
     transition: 0.3s;
     white-space: nowrap;
 }
-.cat-btn:hover { color: #d4af37; }
-.cat-btn.active { color: #d4af37; }
+.cat-btn:hover { color: #111; }
+.cat-btn.active { color: #111; }
 .cat-btn.active::after {
     content: '';
     position: absolute;
     bottom: 0; right: 15px; left: 15px;
     height: 3px;
-    background: #d4af37;
+    background: #ffd700;
     border-radius: 3px;
 }
 
 /* البانر */
 .banner { max-width: 1300px; margin: 25px auto; padding: 0 20px; }
 .banner-inner {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border-radius: 20px;
-    padding: 50px 30px;
+    padding: 45px 30px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    border: 1px solid #333;
 }
 .banner-inner::before {
     content: '';
     position: absolute;
     top: -50%; right: -20%;
     width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(212,175,55,0.15), transparent);
+    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
     border-radius: 50%;
 }
 .banner h2 {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 900;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     position: relative;
 }
-.banner h2 span { color: #d4af37; }
-.banner p { font-size: 15px; color: #ccc; position: relative; }
+.banner h2 span { color: #ffd700; }
+.banner p { font-size: 15px; opacity: 0.9; position: relative; }
 
 /* عنوان القسم */
 .section-title {
@@ -189,7 +187,7 @@ header {
 .section-title::before {
     content: '';
     width: 5px; height: 25px;
-    background: #d4af37;
+    background: #ffd700;
     border-radius: 3px;
 }
 
@@ -211,9 +209,9 @@ header {
     border: 1px solid #eee;
 }
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    border-color: #d4af37;
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: #ffd700;
 }
 .discount-badge {
     position: absolute;
@@ -231,7 +229,7 @@ header {
     top: 12px; left: 12px;
     background: white;
     border: none;
-    width: 40px; height: 40px;
+    width: 38px; height: 38px;
     border-radius: 50%;
     font-size: 18px;
     cursor: pointer;
@@ -242,7 +240,7 @@ header {
 .fav-btn:hover { transform: scale(1.15); }
 .fav-btn.active { background: #e63946; }
 .product-img {
-    width: 100%; height: 230px;
+    width: 100%; height: 220px;
     background: linear-gradient(135deg, #f8f8f8, #eee);
     display: flex;
     align-items: center;
@@ -252,7 +250,7 @@ header {
     overflow: hidden;
 }
 .product-img img { width: 100%; height: 100%; object-fit: cover; }
-.product-info { padding: 16px; }
+.product-info { padding: 15px; }
 .product-cat {
     font-size: 11px;
     color: #999;
@@ -270,7 +268,7 @@ header {
 .product-price {
     font-size: 22px;
     font-weight: 900;
-    color: #0a0a0a;
+    color: #111;
     margin-bottom: 12px;
 }
 .product-price span { font-size: 13px; color: #999; font-weight: 600; }
@@ -285,17 +283,17 @@ header {
     display: block;
     width: 100%;
     padding: 13px;
-    border: 2px solid #0a0a0a;
+    border: none;
     border-radius: 10px;
-    background: #0a0a0a;
-    color: #d4af37;
+    background: #ffd700;
+    color: #111;
     font-size: 14px;
     font-weight: 900;
     cursor: pointer;
     font-family: inherit;
     transition: 0.3s;
 }
-.order-btn:hover { background: #d4af37; color: #0a0a0a; border-color: #d4af37; }
+.order-btn:hover { background: #111; color: #ffd700; }
 
 /* Sidebar */
 .sidebar {
@@ -305,26 +303,25 @@ header {
     height: 100vh;
     background: white;
     z-index: 999;
-    box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+    box-shadow: -5px 0 30px rgba(0,0,0,0.2);
     transition: 0.4s;
     display: flex;
     flex-direction: column;
 }
 .sidebar.open { left: 0; }
 .sidebar-header {
-    background: #0a0a0a;
-    color: #d4af37;
+    background: #111;
+    color: #ffd700;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #d4af37;
 }
 .sidebar-header h3 { font-size: 18px; font-weight: 900; }
 .close-btn {
-    background: rgba(212,175,55,0.2);
+    background: rgba(255,215,0,0.2);
     border: none;
-    color: #d4af37;
+    color: #ffd700;
     width: 35px; height: 35px;
     border-radius: 50%;
     font-size: 18px;
@@ -336,7 +333,7 @@ header {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.5);
     z-index: 998;
     display: none;
 }
@@ -344,11 +341,10 @@ header {
 
 /* الفوتر */
 footer {
-    background: #0a0a0a;
+    background: #111;
     color: #ccc;
-    padding: 50px 20px 20px;
-    margin-top: 50px;
-    border-top: 3px solid #d4af37;
+    padding: 45px 20px 20px;
+    margin-top: 40px;
 }
 .footer-inner {
     max-width: 1300px;
@@ -358,7 +354,7 @@ footer {
     gap: 30px;
 }
 .footer-col h3 {
-    color: #d4af37;
+    color: #ffd700;
     font-size: 16px;
     margin-bottom: 15px;
     font-weight: 900;
@@ -372,7 +368,7 @@ footer {
     margin-bottom: 8px;
     transition: 0.3s;
 }
-.footer-col a:hover { color: #d4af37; }
+.footer-col a:hover { color: #ffd700; }
 .footer-bottom {
     text-align: center;
     margin-top: 30px;
@@ -427,14 +423,12 @@ footer {
 </head>
 <body>
 
-<!-- الشريط العلوي المتحرك -->
 <div class="top-bar">
     <marquee scrollamount="4">
         🚚 توصيل لجميع مناطق الأردن  •  💳 الدفع عند التسليم أو كليك  •  🔥 عروض حصرية كل أسبوع  •  📞 للاستفسار: 0797639392
     </marquee>
 </div>
 
-<!-- الهيدر -->
 <header>
     <div class="header-inner">
         <div class="logo-area">
@@ -458,7 +452,6 @@ footer {
     </div>
 </header>
 
-<!-- التصنيفات -->
 <div class="categories-bar">
     <div class="categories-inner">
         <button class="cat-btn active" onclick="filterCat('all', this)">🏠 الرئيسية</button>
@@ -471,19 +464,16 @@ footer {
     </div>
 </div>
 
-<!-- البانر -->
 <div class="banner">
     <div class="banner-inner">
-        <h2>أهلاً بيك في <span>رامي للستلايت</span> 👑</h2>
+        <h2>أهلاً بيك في <span>رامي للستلايت</span> 🎉</h2>
         <p>كل ما تحتاجه لستلايتك — اشتراكات، ريسيفرات، شاشات، وحمالات</p>
     </div>
 </div>
 
-<!-- المنتجات -->
 <div class="section-title" id="section-title">🔥 جميع المنتجات</div>
 <div class="products-grid" id="products"></div>
 
-<!-- السلة -->
 <div class="sidebar" id="cart-sidebar">
     <div class="sidebar-header">
         <h3>🛒 سلة التسوق</h3>
@@ -494,7 +484,6 @@ footer {
     </div>
 </div>
 
-<!-- المفضلة -->
 <div class="sidebar" id="fav-sidebar">
     <div class="sidebar-header">
         <h3>❤️ المفضلة</h3>
@@ -509,7 +498,6 @@ footer {
 
 <a href="https://wa.me/962797639392" target="_blank" class="float-wa">💬</a>
 
-<!-- الفوتر -->
 <footer>
     <div class="footer-inner">
         <div class="footer-col">
@@ -541,7 +529,6 @@ footer {
 </footer>
 
 <script>
-// ⚠️ ضع منتجاتك هنا
 const products = [
     { id: 1, name: "اشتراك IPTV - شهر", category: "iptv", price: 5, oldPrice: 7, image: "", icon: "📺" },
     { id: 2, name: "اشتراك IPTV - 3 أشهر", category: "iptv", price: 12, oldPrice: 15, image: "", icon: "📺" },
@@ -659,7 +646,7 @@ function renderCart() {
 
     const msg = 'مرحبا، بدي أطلب:\n' + cart.map(i => `• ${i.name} × ${i.qty} = ${i.price * i.qty} د.أ`).join('\n') + `\n\nالإجمالي: ${total} د.أ\n\nطريقة الدفع: `;
     html += `
-        <div style="padding:20px; text-align:center; border-top:2px solid #d4af37; margin-top:10px;">
+        <div style="padding:20px; text-align:center; border-top:2px solid #ffd700; margin-top:10px;">
             <div style="font-size:20px; font-weight:900; color:#111; margin-bottom:15px;">
                 الإجمالي: ${total} د.أ
             </div>
@@ -706,7 +693,7 @@ function renderFav() {
                     <div style="font-weight:700; font-size:14px;">${p.name}</div>
                     <div style="color:#111; font-weight:900;">${p.price} د.أ</div>
                 </div>
-                <button onclick="addToCart(${p.id})" style="background:#d4af37; color:#111; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:bold;">🛒</button>
+                <button onclick="addToCart(${p.id})" style="background:#ffd700; color:#111; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:bold;">🛒</button>
             </div>
         `;
     }).join('');
