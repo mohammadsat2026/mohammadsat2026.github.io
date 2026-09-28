@@ -690,4 +690,77 @@ function renderCart() {
                 💬 اطلب على واتساب
             </a>
             <div style="font-size:13px; font-weight:700; margin-bottom:10px;">أو اختر طريقة الدفع:</div>
-            <div class
+            <div class="payment-methods">
+                <a href="tel:0797639392" class="payment-btn pay-click">🟢 كليك</a>
+                <a href="https://www.paypal.com/paypalme/mohammadissa079" target="_blank" class="payment-btn pay-paypal">🅿️ PayPal</a>
+                <a href="https://wa.me/962797639392" target="_blank" class="payment-btn pay-cash">💵 عند التسليم</a>
+            </div>
+        </div>
+    `;
+    body.innerHTML = html;
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(x => x.id !== id);
+    saveCart();
+}
+
+function toggleFav(id) {
+    if (fav.includes(id)) fav = fav.filter(x => x !== id);
+    else fav.push(id);
+    localStorage.setItem('fav', JSON.stringify(fav));
+    document.getElementById('fav-count').textContent = fav.length;
+    renderProducts();
+    renderFav();
+}
+
+function renderFav() {
+    const body = document.getElementById('fav-body');
+    if (fav.length === 0) {
+        body.innerHTML = '<div class="empty-msg">ما في منتجات بالمفضلة ❤️</div>';
+        return;
+    }
+    body.innerHTML = fav.map(id => {
+        const p = products.find(x => x.id === id);
+        if (!p) return '';
+        return `
+            <div style="display:flex; gap:10px; padding:12px; border-bottom:1px solid #eee; align-items:center;">
+                <div style="font-size:30px;">${p.icon}</div>
+                <div style="flex:1;">
+                    <div style="font-weight:700; font-size:14px;">${p.name}</div>
+                    <div style="font-weight:900;">${p.price} د.أ</div>
+                </div>
+                <button onclick="addToCart(${p.id})" style="background:#ffd700; color:#111; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:bold;">🛒</button>
+            </div>
+        `;
+    }).join('');
+}
+
+function openCart() {
+    document.getElementById('cart-sidebar').classList.add('open');
+    document.getElementById('overlay').classList.add('show');
+}
+function closeCart() {
+    document.getElementById('cart-sidebar').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+}
+function openFav() {
+    document.getElementById('fav-sidebar').classList.add('open');
+    document.getElementById('overlay').classList.add('show');
+}
+function closeFav() {
+    document.getElementById('fav-sidebar').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+}
+function closeAll() {
+    document.querySelectorAll('.sidebar').forEach(s => s.classList.remove('open'));
+    document.getElementById('overlay').classList.remove('show');
+}
+
+renderProducts();
+saveCart();
+renderFav();
+</script>
+
+</body>
+</html>
