@@ -470,13 +470,13 @@ footer {
 <div class="categories-bar">
     <div class="categories-inner">
         <button class="cat-btn active" onclick="filterCat('all', this)">🏠 الكل</button>
-        <button class="cat-btn" onclick="filterCat('iptv', this)">ريسيفر انفنتي </button>
-        <button class="cat-btn" onclick="filterCat('receivers', this)">ريسيفر سبايدر</button>
-        <button class="cat-btn" onclick="filterCat('screens', this)">ريسيفر غزال</button>
-        <button class="cat-btn" onclick="filterCat('remotes', this)">اشتراكات IPTV</button>
-        <button class="cat-btn" onclick="filterCat('holders', this)">ريموتات شاشات </button>
-        <button class="cat-btn" onclick="filterCat('tools', this)">ريموتات ريسيفرات </button>
-        <button class="cat-btn" onclick="filterCat('offers', this)">حمالات متحركة وثابتة </button>
+        <button class="cat-btn" onclick="filterCat('receivers1', this)">ريسيفر انفنتي </button>
+        <button class="cat-btn" onclick="filterCat('receivers2', this)">ريسيفر سبايدر</button>
+        <button class="cat-btn" onclick="filterCat('receivers3', this)">ريسيفر غزال</button>
+        <button class="cat-btn" onclick="filterCat('iptvv', this)">اشتراكات IPTV</button>
+        <button class="cat-btn" onclick="filterCat('remotes1', this)">ريموتات شاشات </button>
+        <button class="cat-btn" onclick="filterCat('remotes2', this)">ريموتات ريسيفرات </button>
+        <button class="cat-btn" onclick="filterCat('screen', this)">حمالات متحركة وثابتة </button>
     </div>
 </div>
 
@@ -556,20 +556,21 @@ footer {
 
 <script>
 const products = [
-    { id: 1, name: "اشتراك IPTV - شهر", category: "iptv", price: 5, oldPrice: 7, image: "", icon: "📺" },
-    { id: 2, name: "اشتراك IPTV - 3 أشهر", category: "iptv", price: 12, oldPrice: 15, image: "", icon: "📺" },
-    { id: 3, name: "اشتراك IPTV - 6 أشهر", category: "iptv", price: 22, oldPrice: 0, image: "", icon: "📺" },
-    { id: 4, name: "اشتراك IPTV - سنة كاملة", category: "iptv", price: 35, oldPrice: 45, image: "", icon: "📺" },
-    { id: 5, name: "رسيفر Android Box 4K", category: "receivers", price: 55, oldPrice: 0, image: "", icon: "📡" },
-    { id: 6, name: "رسيفر 4K Pro", category: "receivers", price: 85, oldPrice: 100, image: "", icon: "📡" },
-    { id: 7, name: "ريموت شاشة سامسونج", category: "remotes", price: 15, oldPrice: 0, image: "", icon: "🎮" },
-    { id: 8, name: "ريموت شاشة LG", category: "remotes", price: 15, oldPrice: 20, image: "", icon: "🎮" },
-    { id: 9, name: "حمالة شاشة حائط", category: "holders", price: 15, oldPrice: 0, image: "", icon: "🔌" },
-    { id: 10, name: "حمالة شاشة متحركة", category: "holders", price: 25, oldPrice: 30, image: "", icon: "🔌" },
+    { id: 1, name: "اشتراك IPTV - شهر", category: "iptvv", price: 5, oldPrice: 7, image: "https://github.com/mohammadsat2026/mohammadsat2026.github.io/blob/main/infinity.png", icon: "📺" },
+    { id: 2, name: "اشتراك IPTV - 3 أشهر", category: "iptvv", price: 12, oldPrice: 15, image: "", icon: "📺" },
+    { id: 3, name: "اشتراك IPTV - 6 أشهر", category: "iptvv", price: 22, oldPrice: 0, image: "", icon: "📺" },
+    { id: 4, name: "اشتراك IPTV - سنة كاملة", category: "iptvv", price: 35, oldPrice: 45, image: "", icon: "📺" },
+    { id: 5, name: "رسيفر Android Box 4K", category: "receivers1", price: 55, oldPrice: 0, image: "", icon: "📡" },
+    { id: 6, name: "رسيفر 4K Pro", category: "receivers2", price: 85, oldPrice: 100, image: "", icon: "📡" },
+    { id: 7, name: "ريموت شاشة سامسونج", category: "remotes1", price: 15, oldPrice: 0, image: "", icon: "🎮" },
+    { id: 8, name: "ريموت شاشة LG", category: "remotes1", price: 15, oldPrice: 20, image: "", icon: "🎮" },
+    { id: 9, name: "حمالة شاشة حائط", category: "screens", price: 15, oldPrice: 0, image: "", icon: "🔌" },
+    { id: 10, name: "حمالة شاشة متحركة", category: "screens", price: 25, oldPrice: 30, image: "", icon: "🔌" },
     { id: 11, name: "شاشة 32 بوصة", category: "screens", price: 120, oldPrice: 0, image: "", icon: "📺" },
     { id: 12, name: "شاشة 43 بوصة Smart", category: "screens", price: 200, oldPrice: 230, image: "", icon: "📺" },
-    { id: 13, name: "عدة تركيب كاملة", category: "tools", price: 35, oldPrice: 0, image: "", icon: "🛠️" },
-    { id: 14, name: "كابل HDMI 2 متر", category: "tools", price: 5, oldPrice: 0, image: "", icon: "🔌" },
+    { id: 13, name: "ريسيفر ", category: "receivers3", price: 35, oldPrice: 0, image: "", icon: "🛠️" },
+    { id: 14, name: "ريسيفر", category: "receivers3", price: 5, oldPrice: 0, image: "", icon: "🔌" },
+     { id: 15, name: "ريسيفر", category: "receivers2", price: 85, oldPrice: 100, image: "", icon: "📡" },
 ];
 
 const catNames = {
