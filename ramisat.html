@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رامي للستلايت | متجرك الأول</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Cairo', Tahoma, sans-serif; background: #0a0a0a; color: #fff; }
 
+/* الشريط العلوي */
+.top-bar {
+    background: #000;
+    color: #d4af37;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    border-bottom: 1px solid #d4af37;
+}
+
+/* الهيدر */
+header {
+    background: #0a0a0a;
+    padding: 15px 20px;
+    border-bottom: 2px solid #d4af37;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.header-inner {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.logo-area { display: flex; align-items: center; gap: 12px; }
+.logo-area img {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    object-fit: cover;
+}
+.logo-area h1 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #d4af37;
+}
+.header-icons { display: flex; gap: 10px; align-items: center; }
+.icon-btn {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #d4af37;
+    width: 45px; height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-btn:hover { background: #d4af37; color: #0a0a0a; }
+.badge {
+    position: absolute;
+    top: -3px; right: -3px;
+    background: #e63946;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+/* البحث */
+.search-section { background: #0a0a0a; padding: 0 20px 15px; }
+.search-box { max-width: 1300px; margin: auto; position: relative; }
+.search-box input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: 2px solid #d4af37;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+}
+.search-box input::placeholder { color: #888; }
+.search-box::before {
+    content: '🔍';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+}
+
+/* التصنيفات */
+.categories-bar {
+    background: #0a0a0a;
+    padding: 0 20px 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.categories-inner {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    gap: 8px;
+}
+.cat-btn {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+.cat-btn:hover { border-color: #d4af37; color: #d4af37; }
+.cat-btn.active { background: #d4af37; color: #0a0a0a; border-color: #d4af37; }
+
+/* البانر الرئيسي */
+.hero {
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+.hero-inner {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    border: 1px solid #d4af37;
+    border-radius: 20px;
+    padding: 50px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero h2 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+.hero p { font-size: 16px; color: #ccc; margin-bottom: 20px; }
+.hero-btn {
+    display: inline-block;
+    background: #d4af37;
+    color: #0a0a0a;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.hero-btn:hover { background: #fff; }
+
+/* شبكة المنتجات */
+.section-title {
+    max-width: 1300px;
+    margin: 30px auto 15px;
+    padding: 0 20px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #d4af37;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.section-title::before {
+    content: '';
+    width: 5px; height: 28px;
+    background: #d4af37;
+    border-radius: 3px;
+}
+.products-grid {
+    max-width: 1300px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+.product-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.product-card:hover {
+    transform: translateY(-6px);
+    border-color: #d4af37;
+    box-shadow: 0 15px 40px rgba(212,175,55,0.2);
+}
+.product-img {
+    width: 100%; height: 260px;
+    background: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: #555;
+    overflow: hidden;
+    position: relative;
+}
+.product-img img { width: 100%; height: 100%; object-fit: cover; }
+.product-info {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.product-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    min-height: 48px;
+}
+.product-price {
+    font-size: 24px;
+    font-weight: 900;
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+.order-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #d4af37;
+    color: #0a0a0a;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
+    margin-top: auto;
+}
+.order-btn:hover { background: #fff; }
+</style>
+</head>
+<body>
+
+<!-- الشريط العلوي -->
+<div class="top-bar">
+    🚚 توصيل لجميع أنحاء المملكة • 💳 الدفع عند التسليم أو كليك
+</div>
+
+<!-- الهيدر -->
+<header>
+    <div class="header-inner">
+        <div class="logo-area">
+            <img src="logo.png" alt="رامي للستلايت">
+            <h1>رامي للستلايت</h1>
+        </div>
+        <div class="header-icons">
+            <button class="icon-btn" onclick="openFav()">
+                ❤️ <span class="badge" id="fav-count">0</span>
+            </button>
+            <button class="icon-btn" onclick="openCart()">
+                🛒 <span class="badge" id="cart-count">0</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- البحث -->
+<div class="search-section">
+    <div class="search-box">
+        <input type="text" id="search" placeholder="ابحث عن منتج...">
+    </div>
+</div>
+
+<!-- التصنيفات -->
+<div class="categories-bar">
+    <div class="categories-inner">
+        <button class="cat-btn active" onclick="filterCat('all', this)">🏠 الكل</button>
+        <button class="cat-btn" onclick="filterCat('iptv', this)">📺 اشتراكات IPTV</button>
+        <button class="cat-btn" onclick="filterCat('receivers', this)">📡 ريسيفرات</button>
+        <button class="cat-btn" onclick="filterCat('screens', this)">📺 شاشات</button>
+        <button class="cat-btn" onclick="filterCat('remotes', this)">🎮 ريموتات</button>
+        <button class="cat-btn" onclick="filterCat('holders', this)">🔌 حمالات</button>
+        <button class="cat-btn" onclick="filterCat('tools', this)">🛠️ عدة وأدوات</button>
+        <button class="cat-btn" onclick="filterCat('software', this)">📥 سوفت وير</button>
+        <button class="cat-btn" onclick="filterCat('offers', this)">🎁 عروض</button>
+    </div>
+</div>
+
+<!-- البانر الرئيسي -->
+<div class="hero">
+    <div class="hero-inner">
+        <h2>رامي للستلايت</h2>
+        <p>كل ما تحتاجه لستلايتك في مكان واحد</p>
+        <a href="#products" class="hero-btn">تسوق الآن</a>
+    </div>
+</div>
+
+<!-- المنتجات -->
+<div class="section-title" id="products">🔥 جميع المنتجات</div>
+<div class="products-grid" id="products-grid"></div>
+
+</body>
+</html>
