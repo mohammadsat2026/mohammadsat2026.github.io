@@ -42,6 +42,16 @@
     50% { transform: scale(1.05); }
 }
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@900&display=swap');
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.card:active {
+    transform: scale(0.96); 
+}
 </style></head><body>
     <div style="text-align:center; padding:20px 15px; margin-bottom:20px;">
     <img src="logo.png" alt="MOHAMMAD SAT" style="width:120px; height:120px; border-radius:50%; border:4px solid #fff; box-shadow:0 4px 15px rgba(102,126,234,0.3);">
